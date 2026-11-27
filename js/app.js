@@ -28,12 +28,16 @@ botonTema.addEventListener("click", function () {
     botonTema.textContent = "Modo oscuro";
   }
 });
+
+// 5. Servicios dinámicos y contador automático
 const servicios = [
   { titulo: "Páginas web", texto: "Sitios informativos claros y ordenados." },
   { titulo: "Diseño adaptable", texto: "Páginas que se ven bien en el celular." },
   { titulo: "Mantenimiento", texto: "Actualización de textos e imágenes." },
   { titulo: "Optimización", texto: "Mejora de velocidad y carga del sitio." }
 ];
+
+document.getElementById("contador-servicios").textContent = servicios.length;
 
 function crearServicio(servicio) {
   return `<article class="mini-tarjeta"><h3>${servicio.titulo}</h3><p>${servicio.texto}</p></article>`;
