@@ -35,6 +35,7 @@ const servicios = [
   { titulo: "Diseño adaptable", texto: "Páginas que se ven bien en el celular." },
   { titulo: "Mantenimiento", texto: "Actualización de textos e imágenes." },
   { titulo: "Optimización", texto: "Mejora de velocidad y carga del sitio." }
+  { titulo: "Optimización", texto: "Mejora de velocidad y carga del sitio." }
 ];
 
 document.getElementById("contador-servicios").textContent = servicios.length;
