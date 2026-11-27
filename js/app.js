@@ -31,11 +31,11 @@ botonTema.addEventListener("click", function () {
 
 // 5. Servicios dinámicos y contador automático
 const servicios = [
-  { titulo: "Páginas web", texto: "Sitios informativos claros y ordenados." },
+ { titulo: "Páginas web", texto: "Sitios informativos claros y ordenados." },
   { titulo: "Diseño adaptable", texto: "Páginas que se ven bien en el celular." },
   { titulo: "Mantenimiento", texto: "Actualización de textos e imágenes." },
-  { titulo: "Optimización", texto: "Mejora de velocidad y carga del sitio." }
-  { titulo: "Optimización", texto: "Mejora de velocidad y carga del sitio." }
+  { titulo: "Optimización", texto: "Mejora de velocidad y carga del sitio." },
+  { titulo: "Posicionamiento SEO", texto: "Mejora la visibilidad de tu sitio en Google." }
 ];
 
 document.getElementById("contador-servicios").textContent = servicios.length;
