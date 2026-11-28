@@ -31,7 +31,7 @@ botonTema.addEventListener("click", function () {
 
 // 5. Servicios dinámicos y contador automático
 const servicios = [
- { titulo: "Páginas web", texto: "Sitios informativos claros y ordenados." },
+  { titulo: "Páginas web", texto: "Sitios informativos claros y ordenados." },
   { titulo: "Diseño adaptable", texto: "Páginas que se ven bien en el celular." },
   { titulo: "Mantenimiento", texto: "Actualización de textos e imágenes." },
   { titulo: "Optimización", texto: "Mejora de velocidad y carga del sitio." },
@@ -49,3 +49,34 @@ const listaServicios = document.getElementById("servicios-lista");
 for (let servicio of servicios) {
   listaServicios.innerHTML += crearServicio(servicio);
 }
+
+// 6. Guardar y recuperar el borrador del mensaje
+const campoMensaje = document.querySelector("#mensaje");
+const formulario = document.querySelector(".formulario");
+const contadorCaracteres = document.querySelector("#contador-caracteres");
+
+function actualizarContador() {
+  contadorCaracteres.textContent = campoMensaje.value.length;
+}
+
+// Al cargar la página, recuperar el borrador si existe
+const borradorGuardado = localStorage.getItem("borrador");
+if (borradorGuardado) {
+  campoMensaje.value = borradorGuardado;
+  actualizarContador();
+}
+
+// En el evento input, guardar el texto con la clave "borrador"
+campoMensaje.addEventListener("input", function () {
+  localStorage.setItem("borrador", campoMensaje.value);
+  actualizarContador();
+});
+
+// Al enviar el formulario correctamente, borrar el borrador
+formulario.addEventListener("submit", function (evento) {
+  evento.preventDefault();
+  localStorage.removeItem("borrador");
+  formulario.reset();
+  actualizarContador();
+  alert("¡Mensaje enviado con éxito!");
+});
